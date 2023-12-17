@@ -36,7 +36,8 @@ all: OpenV2G.exe
 OpenV2G.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MinGW C Linker'
-	gcc  -o "OpenV2G.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	$(XCC)  -o "OpenV2G.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	cp OpenV2G.exe ${OUT_DIR}
 	@echo 'Finished building target: $@'
 	@echo ' '
 
